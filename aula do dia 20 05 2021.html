@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>5.24</title>
+
+</head>
+<style>
+    div{color: hsl(155, 72%, 35%);
+        font-family:"Calisto MT", sans-serif;
+        }
+  .texto{color: hsl(155, 72%, 35%);
+        font-family: "Calisto MT", sans-serif;
+       }
+
+  
+       input {
+          color:#0059ff;
+          font-family: "Calisto MT", sans-serif;
+          border: 9px groove #48D1CC;
+          padding: 10px 10px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+           
+   button {
+          color:#0000CD;
+          font-family: "Calisto MT", sans-serif; 
+          border: 10px groove #48D1CC;
+          padding: 10px 10px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+        
+   </style>
+</head>
+<body>
+<center> 
+    <br><div>Primeira Nota</div><input type= "text" id="inpPrimeiraNota1"></br>
+    <br><div>Segunda Nota</div><input type= "text" id="inpSegundaNota2"></br>
+    <br><button onclick="Processar()">Processar</button><br>
+    <br><div id="divResultado"></div>
+</center>
+
+<script>
+    function Processar()
+    {
+      var PrimeiraNota= Number(document.getElementById("inpPrimeiraNota1").value)
+      var SegundaNota= Number(document.getElementById("inpSegundaNota2").value)
+      var Media= (PrimeiraNota+SegundaNota)/2
+
+      if(Media>9&&Media>=10)
+      {
+        document.getElementById("divResultado").innerHTML= "<br>  Nota 1:  "+PrimeiraNota+" <br> Nota 2:  "+ SegundaNota +"<br>  Media:  "+Media+"<br>  Sua Nota tem valor A  "
+      }else{
+        if(Media>7.5&&Media<=9)
+        {
+            document.getElementById("divResultado").innerHTML= "<br>  Nota 1:  "+PrimeiraNota+" <br> Nota 2:  "+ SegundaNota +"<br>  Media:  "+Media+"<br>  Sua Nota tem valor B "
+        } 
+        
+        if(Media>6&&Media<=7.5)
+        {
+            document.getElementById("divResultado").innerHTML="<br>  Nota 1:  "+PrimeiraNota+" <br> Nota 2:  "+ SegundaNota +"<br>  Media:  "+Media+"<br>  Sua Nota tem valor C  "
+        }else{
+
+        if(Media>4&&Media<=6)
+        {
+            document.getElementById("divResultado").innerHTML="<br>  Nota 1:  "+PrimeiraNota+" <br> Nota 2:  "+ SegundaNota +"<br>  Media:  "+Media+"<br>  Sua Nota tem valor D  "
+        }
+        }
+        
+        if(Media>0&&Media<=4)
+        {
+            document.getElementById("divResultado").innerHTML="<br>  Nota 1:  "+PrimeiraNota+" <br> Nota 2:  "+ SegundaNota +"<br>  Media:  "+Media+"<br>  Sua Nota tem valor E  "
+        }
+
+
+      }
+
+    }
+</script>
+
+<body>
+    
+</body>
+</html>
